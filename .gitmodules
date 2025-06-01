@@ -1,0 +1,6 @@
+[submodule "docs/libs/libs/Rega-Plus"]
+	path = docs/libs/libs/Rega-Plus
+	url = https://github.com/rodrigomilisse/Rega-Plus
+[submodule "docs/libs/Rega-Plus"]
+	path = docs/libs/Rega-Plus
+	url = https://github.com/rodrigomilisse/Rega-Plus
