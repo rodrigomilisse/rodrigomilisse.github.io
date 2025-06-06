@@ -4,3 +4,6 @@
 [submodule "docs/libs/Rega-Plus"]
 	path = docs/libs/Rega-Plus
 	url = https://github.com/rodrigomilisse/Rega-Plus
+[submodule "docs/libs/WinWin"]
+	path = docs/libs/WinWin
+	url = https://github.com/rodrigomilisse/WinWin.git
