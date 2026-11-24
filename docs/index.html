@@ -1,136 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Márcio Milisse | Profile</title>
-	<link rel="stylesheet" href="CSS/structure.css">
-	<link rel="stylesheet" href="CSS/theme.css">
-
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Márcio Milisse</title>
+  <meta name="description" content="Márcio Milisse — computer science, research, futsal, languages. Lisbon to Leuven. Explore the globe." />
+  <meta name="theme-color" content="#07100e" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,700;0,800;1,800&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2307100e'/%3E%3Ctext x='16' y='23' font-family='Arial Narrow,sans-serif' font-weight='800' font-size='20' text-anchor='middle' fill='%23ffcf70'%3EM%3C/text%3E%3C/svg%3E" />
+  <script type="module" crossorigin src="./assets/index-BTowPRu-.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-B7Y6_9h-.css">
 </head>
-
 <body>
-	<div class="container">
-		<header>
-			<h1>Márcio Milisse</h1>
-			<p>Computer Science and Engineering Student | Lisbon, Portugal</p>
-			<p>Email: <a href="mailto:rodrigomilisse@gmail.com">rodrigomilisse@gmail.com</a> | Tel: +351 939 266 394</p>
-		</header>
+  <div id="loader"><div class="loader-in"><div class="loader-num"><span id="loadnum">0</span><i>%</i></div><div class="loader-bar"><b id="loadbar"></b></div><p data-i18n="loading">Warming up</p></div></div>
 
-		<div class="section">
-			<h2>About Me</h2>
-			<p>I am a Computer Science and Engineering student interested in Theory of Computation, Quantumn Computing
-				and Machine Learning. I enjoy participating in math contests and building personal projects.
-			</p>
-		</div>
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
-		<div class="section info-grid">
-			<div>
-				<h2>Languages</h2>
-				I am a native Portuguese and English speaker, I can also understand Spannish and I'm learninh German and
-				French
-			</div>
-			<div>
-				<h2>Soft Skills</h2>
-				<ul>
-					<li>Adaptability</li>
-					<li>Critical Thinking</li>
-					<li>Teamwork</li>
-					<li>Technical Communication</li>
-					<li>Self-taught</li>
-				</ul>
-			</div>
-		</div>
+  <!-- navigation: the globe itself, plus a dock, a timeline-free "next" and keys -->
+  <header class="bar">
+    <a class="logo" href="#" id="logo" aria-label="Márcio Milisse — home">M<span>.</span>M</a>
+    <nav class="bar-r">
+      <a class="pill" href="Marcio_Milisse_CV_blue.pdf" target="_blank" rel="noopener" data-i18n="cv">CV</a>
+      <button class="pill lang" id="lang" aria-label="Switch language"><span class="on">EN</span><span>PT</span></button>
+    </nav>
+  </header>
+  <nav class="dock" id="dock" aria-label="Places"></nav>
+  <p class="hint" id="hint"><span data-i18n="hint">Drag the globe · scroll or use the dock to travel</span></p>
+  <div id="hotspots"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><i></i><b></b></div>
+  <div class="tip" id="tip" aria-hidden="true"></div>
 
-		<div class="section">
-			<h2>Technical Skills</h2>
-			<ul>
-				<li><strong>Programming:</strong> Assembly, C/C++, Java, Python, Haskell, JavaScript</li>
-				<li><strong>Web:</strong> HTML, CSS</li>
-				<li><strong>Data Science:</strong> scikit-learn, pandas, NumPy, Matplotlib, Oracle SQL, PL/SQL</li>
-				<li><strong>Tools:</strong> Git, Bash, Make, LaTeX, Markdown, VBA</li>
-			</ul>
-		</div>
+  <!-- one idea per place -->
+  <main id="leads">
+    <section class="stop" data-id="home" data-title="Home">
+      <div class="lead"><p class="sub" data-i18n="hero.sub">Computer science. Lisbon → Leuven.</p></div>
+    </section>
 
-		<div class="section">
-			<h2>Recent Experience</h2>
-			<p><strong>Unicre – Lisbon (Jun 2024 - Aug 2024)</strong></p>
-			<ul>
-				<li>Developed a churn prediction model using Random Forest.</li>
-				<li>Processed and analyzed historical data with pandas.</li>
-				<li>Collaborated in the Data Services team with a predictive focus.</li>
-			</ul>
-		</div>
+    <section class="stop" data-id="studies" data-title="Studies">
+      <div class="lead">
+        <p class="eyebrow"><span data-i18n="n.studies">Studies</span></p>
+        <h2 data-i18n="st.h">Lisbon to Leuven.</h2>
+        <p class="sub" data-i18n="st.p">Computer Science and Engineering — first at the University of Lisbon, now at KU Leuven.</p>
+      </div>
+    </section>
 
-		<div class="section">
-			<h2>Education</h2>
-			<ul>
-				<li><strong>Bachelor's in Computer Engineering</strong><br>University of Lisbon, expected graduation:
-					Jun 2026</li>
-				<li><strong>High School in Science and Technology</strong><br>ESLFB @aepa (2023)
-			</ul>
-		</div>
+    <section class="stop" data-id="research" data-title="Research">
+      <div class="lead">
+        <p class="eyebrow"><span data-i18n="n.research">Research</span></p>
+        <h2 data-i18n="re.h">Co-author at ASE 2026 (CORE A*).</h2>
+        <p class="sub" data-i18n="re.p">Research internship at LASIGE, summer 2025.</p>
+      </div>
+    </section>
 
-		<div class="section info-grid">
-			<div>
-				<h2>Awards</h2>
-				<ul class="pdf-attachments" style="list-style: none;">
-					<li>
-						<a href="Awards/Quadro de Mérito 2024.pdf" target="_blank" rel="noopener noreferrer">
-							📄 Quadro de Mérito 2024
-						</a>
-					</li>
-					<li>
-						<a href="Awards/Quadro de Excelência 2023.pdf" target="_blank" rel="noopener noreferrer">
-							📄 Quadro de Excelência 2023
-						</a>
-					</li>
-					<li>
-						<a href="Awards/Congresso de Cientistas em Ação - Menção Honrosa.pdf" target="_blank"
-							rel="noopener noreferrer">
-							📄 Congresso de Cientistas em Ação - Menção Honrosa
-						</a>
-					</li>
-				</ul>
-			</div>
-			<div>
-				<h2>Certificates</h2>
-				<ul class="pdf-attachments" style="list-style: none;">
-					<li>
-						<a href="Certificates/EV2024_Certificado_Márcio Milisse.pdf" target="_blank"
-							rel="noopener noreferrer">
-							📄 Unicre Internship 2024
-						</a>
-					</li>
-					<li>
-						<a href="Certificates/High School Diploma.pdf" target="_blank" rel="noopener noreferrer">
-							📄 High School Diploma
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<div class="section">
-			<h2>Portfolio</h2>
-			<p>Check out some of my projects on:</p>
-			<a href="https://github.com/rodrigomilisse?tab=repositories" target="_blank">github.com/rodrigomilisse</a>
-			<p>Just a small project: </p>
-			<a href="libs/Rega-Plus/main-page.html">Rega+</a>
-		</div>
+    <section class="stop" data-id="industry" data-title="Industry">
+      <div class="lead">
+        <p class="eyebrow"><span data-i18n="n.industry">Industry</span></p>
+        <h2 data-i18n="in.h">Data engineering intern.</h2>
+        <p class="sub" data-i18n="in.p">Unicre, summer 2024.</p>
+      </div>
+    </section>
 
-		<div class="section">
-			<h2>Hobbies</h2>
-			<ul>
-				<li>Personal Software Projects</li>
-				<li>Learning Mathematics</li>
-				<li>Playing/Watching Futsal</li>
-				<li>Running</li>
-			</ul>
-		</div>
 
+    <section class="stop" data-id="languages" data-title="Languages">
+      <div class="lead">
+        <p class="eyebrow"><span data-i18n="n.languages">Languages</span></p>
+        <h2 data-i18n="la.h">Languages.</h2>
+        <ul class="legend" id="legend">
+          <li class="all" data-lang="0" style="--c:#5ee7c8"><b data-i18n="lv.all">All</b><span class="dots"><s style="--c:#ffcf70"></s><s style="--c:#fff"></s><s style="--c:#ff6b6b"></s><s style="--c:#7fb8ff"></s><s style="--c:#ff9d5c"></s><s style="--c:#3dff8b"></s></span></li>
+          <li data-lang="1" data-m="5" data-n="6" style="--c:#ffcf70"><b>Português</b><i></i></li>
+          <li data-lang="2" data-m="5" data-n="24" style="--c:#ffffff"><b>English</b><i></i></li>
+          <li data-lang="6" data-m="3.5" data-n="21" style="--c:#ff6b6b"><b>Español</b><i></i></li>
+          <li data-lang="3" data-m="3" data-n="24" style="--c:#7fb8ff"><b>Français</b><i></i></li>
+          <li class="faint" data-lang="4" data-m="0.5" data-n="3" style="--c:#ff9d5c"><b>Nederlands</b><i></i></li>
+          <li class="faint" data-lang="5" data-m="0.5" data-n="3" style="--c:#3dff8b"><b>Deutsch</b><i></i></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="stop" data-id="built" data-title="Built">
+      <div class="lead">
+        <p class="eyebrow"><span data-i18n="n.projects">Built</span></p>
+        <h2 data-i18n="pr.h">Things I've built.</h2>
+        <p class="sub"><a class="tl" href="https://github.com/rodrigomilisse?tab=repositories" target="_blank" rel="noopener" data-i18n="pr.p">All on GitHub ↗</a></p>
+      </div>
+    </section>
+
+    <section class="stop" data-id="contact" data-title="Contact">
+      <div class="lead">
+        <p class="eyebrow"><span data-i18n="n.contact">Contact</span></p>
+        <h2 class="big" data-i18n="ct.h">Let's talk.</h2>
+        <ul class="contact">
+          <li><a href="mailto:rodrigomilisse@gmail.com">rodrigomilisse@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/marcio-milisse/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+          <li><a href="https://github.com/rodrigomilisse" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li><a href="Marcio_Milisse_CV_blue.pdf" target="_blank" rel="noopener" data-i18n="ct.cv">CV ↓</a></li>
+        </ul>
+        <p class="sub"><button class="tl" type="button" data-open="credits" data-i18n="ct.cr">Photo credits</button></p>
+      </div>
+    </section>
+  </main>
+
+  <div id="scrim"></div>
+  <aside id="drawer" aria-hidden="true" inert role="dialog" aria-label="Details"><button class="x" id="dclose" aria-label="Close">×</button><div id="dbody"></div></aside>
+
+  <template id="d-studies">
+    <p class="d-kick" data-i18n="n.studies">Studies</p>
+    <h3 data-i18n="d.st.h">Two universities, one direction.</h3>
+    <ul class="d-list">
+      <li><time>2026 – present</time><b>KU Leuven</b><span data-i18n="d.st.c">Master of Engineering: Computer Science. Track: Distributed Systems and Secure Software.</span></li>
+      <li><time>2023 – 2026</time><b>University of Lisbon (FCUL)</b><span data-i18n="d.st.b">Bachelor of Science: Computer Science and Engineering. Coursework includes First-Order Logic (19/20), Operating Systems (19/20), Computer Architecture (18/20) and Data Structures &amp; Algorithms (17/20).</span></li>
+    </ul>
+    <figure class="d-fig"><img src="./img/web/arenberg.webp" alt="Arenberg Castle, KU Leuven" loading="lazy" /><figcaption>Arenberg · KU Leuven</figcaption></figure>
+    <figure class="d-fig"><img src="./img/web/lisbon.webp" alt="Lisbon from Santa Luzia" loading="lazy" /><figcaption>Lisboa</figcaption></figure>
+  </template>
+  <template id="d-research">
+    <p class="d-kick" data-i18n="n.research">Research</p>
+    <a class="d-poster d-paper" href="./barista-ase2026.pdf" target="_blank" rel="noopener"><img src="./img/paper_p1.webp" alt="First page of the paper: Barista: Synthesizing Typestate Specifications with LLM Agents, ASE 2026" loading="lazy" /></a>
+    <h3 data-i18n="d.re.h">Research internship at LASIGE.</h3>
+    <p class="d-p" data-i18n="d.re.p">Undergraduate Research Intern at LASIGE, the University of Lisbon research lab rated highest by FCT, Portugal's science agency. July to September 2025.</p>
+    <ul class="d-bul"><li data-i18n="d.re.b1">Prototyped LLM-based generation of program specifications using grammar-constrained prompting, the approach that preceded the paper's agentic pipeline.</li><li data-i18n="d.re.b2">Co-authored "Barista: Synthesizing Typestate Specifications with LLM Agents" (ASE 2026, CORE A*).</li><li data-i18n="d.re.b3">Authored expert typestate annotations that form part of the ground truth for a 35-class JDK benchmark.</li></ul>
+    <p class="d-p" data-i18n="d.re.m">ASE 2026 is held in Munich, Germany, on 12–16 October 2026. It is the 41st edition of the IEEE/ACM International Conference on Automated Software Engineering.</p>
+    <a class="d-poster" href="./img/poster.webp" target="_blank" rel="noopener"><img src="./img/poster.webp" alt="Poster: Barista: Synthesizing Typestate Specifications with LLM Agents, LASIGE" loading="lazy" /></a>
+    <p class="d-links"><a href="https://dl.acm.org/doi/abs/10.1145/3832783.3834427" target="_blank" rel="noopener" data-i18n="d.re.l">Paper page ↗</a><a href="./barista-ase2026.pdf" target="_blank" rel="noopener" data-i18n="d.re.pdf">PDF ↗</a></p>
+  </template>
+  <template id="d-industry">
+    <p class="d-kick" data-i18n="n.industry">Industry</p>
+    <h3>Unicre</h3>
+    <p class="d-p" data-i18n="d.in.p1">Data Engineering Intern at Unicre, Portugal's largest merchant acquirer, June to August 2024.</p>
+    <ul class="d-bul"><li data-i18n="d.in.b1">Engineered SQL pipelines to extract, clean and reshape historical merchant data for modelling.</li><li data-i18n="d.in.b2">Designed and validated a Python machine learning model predicting merchant churn.</li></ul>
+  </template>
+  <template id="d-futsal">
+    <p class="d-kick" data-i18n="n.sports">Sports</p>
+    <h3 data-i18n="fu.h">Futsal.</h3>
+    
+    <figure class="d-fig"><img src="./img/f2.jpg" alt="Futsal match" loading="lazy" /></figure>
+    <figure class="d-fig"><img src="./img/f3.jpg" alt="One-on-one with the goalkeeper" loading="lazy" /></figure>
+    <figure class="d-fig"><img src="./img/f4.jpg" alt="Close control along the touchline" loading="lazy" /></figure>
+  </template>
+  <template id="d-credits">
+    <p class="d-kick" data-i18n="ct.cr">Photo credits</p>
+    <h3 data-i18n="d.cr.h">Where the pictures come from.</h3>
+    <p class="d-p" data-i18n="d.cr.p">Futsal and portrait photos are my own. The rest are from Wikimedia Commons, used under their licences.</p>
+    <ul class="d-list" id="credlist"></ul>
+  </template>
 
 </body>
-
 </html>
